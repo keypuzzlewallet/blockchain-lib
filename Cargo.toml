@@ -1,0 +1,36 @@
+[package]
+authors = ["hoang.ong"]
+edition = "2021"
+name = "blockchain-lib"
+rust-version = "1.70"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["lib", "staticlib", "cdylib"]
+name = "blockchain_lib"
+
+[dependencies]
+anyhow = "1.0.69"
+bigdecimal = {version = "0.3.0", features = ["serde"]}
+lazy_static = "1.4.0"
+rustmodel = {path = "../rustmodel"}
+serde = {version = "1.0", features = ["derive"]}
+serde_json = "1.0"
+
+#blockchains
+bitcoin = "0.29.2"
+cardano-serialization-lib = "11.4.0"
+ethers = "2.0.7"
+
+#Java JNI
+jni = "0.17.0"
+robusta_jni = "0.2.0"
+
+#utilities
+base64 = "0.13.1"
+hex = "0.4.3"
+
+[dev-dependencies]
+tssv3 = {path = "../tssv3"}
